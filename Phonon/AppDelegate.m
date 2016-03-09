@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "PhotoViewController.h"
+#import <SimpleAuth/SimpleAuth.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [NSThread sleepForTimeInterval:1.5];
+    
+    // Simple Auth for Instagram
+    SimpleAuth.configuration[@"instagram"] = @{
+        @"client_id" : @"1ceeccc66bbe479abd39798f27ac3ab8",
+        SimpleAuthRedirectURIKey : @"photocrawler://auth/instagram"
+    };
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Make navigation controller to be initial
+    PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoViewController];
+    self.window.rootViewController = navController;
+    
+    // Set Navigation bar style
+    navController.navigationBar.barTintColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0];
+    navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+
+    
     return YES;
 }
 
@@ -40,6 +66,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Private methods
+
+- (void)customizeUserInterface {
+    // Custom nav bar
+    UIColor *navBarColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0]; // #9B2BE0
+    [[UINavigationBar appearance] setBarTintColor:navBarColor];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
 }
 
 @end

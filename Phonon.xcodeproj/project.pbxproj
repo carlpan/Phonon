@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1674C4771AA41D5529CE0F9 /* libPods-Phonon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D617D42B65B67636FD1B2D /* libPods-Phonon.a */; };
+		B30441361C8DFDE4000B41DC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30441351C8DFDE4000B41DC /* LoginViewController.m */; };
+		B333B6341C88B0FA00EEAA22 /* SearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B333B6331C88B0FA00EEAA22 /* SearchResultsController.m */; };
+		B333B6371C88BDF400EEAA22 /* DownloadController.m in Sources */ = {isa = PBXBuildFile; fileRef = B333B6361C88BDF400EEAA22 /* DownloadController.m */; };
+		B333B63A1C8A1B3800EEAA22 /* FriendsTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B333B6391C8A1B3800EEAA22 /* FriendsTagViewController.m */; };
 		B3E90F871C82657000D5B8BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90F861C82657000D5B8BE /* main.m */; };
 		B3E90F8A1C82657000D5B8BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90F891C82657000D5B8BE /* AppDelegate.m */; };
-		B3E90F8D1C82657000D5B8BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90F8C1C82657000D5B8BE /* ViewController.m */; };
-		B3E90F901C82657000D5B8BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E90F8E1C82657000D5B8BE /* Main.storyboard */; };
 		B3E90F921C82657000D5B8BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E90F911C82657000D5B8BE /* Assets.xcassets */; };
 		B3E90F951C82657000D5B8BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E90F931C82657000D5B8BE /* LaunchScreen.storyboard */; };
 		B3E90FA01C82657100D5B8BE /* PhononTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90F9F1C82657100D5B8BE /* PhononTests.m */; };
+		B3E90FB21C8268AD00D5B8BE /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FB11C8268AD00D5B8BE /* PhotoViewController.m */; };
+		B3E90FB51C83998700D5B8BE /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FB41C83998700D5B8BE /* PhotoCell.m */; };
+		B3E90FB81C839A7E00D5B8BE /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FB71C839A7E00D5B8BE /* PhotoController.m */; };
+		B3E90FBB1C83A9C100D5B8BE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FBA1C83A9C100D5B8BE /* DetailViewController.m */; };
+		B3E90FBE1C83AC2600D5B8BE /* PresentDetailTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FBD1C83AC2600D5B8BE /* PresentDetailTransition.m */; };
+		B3E90FC11C83B38F00D5B8BE /* DismissDetailTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FC01C83B38F00D5B8BE /* DismissDetailTransition.m */; };
+		B3E90FC41C83DB0E00D5B8BE /* MetadataView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E90FC31C83DB0E00D5B8BE /* MetadataView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +37,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29D617D42B65B67636FD1B2D /* libPods-Phonon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Phonon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		424DC5116E76E33BE3960B30 /* Pods-Phonon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phonon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phonon/Pods-Phonon.release.xcconfig"; sourceTree = "<group>"; };
+		6DA8AB212E8043842AEBD07C /* Pods-Phonon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phonon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phonon/Pods-Phonon.debug.xcconfig"; sourceTree = "<group>"; };
+		B30441341C8DFDE4000B41DC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B30441351C8DFDE4000B41DC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B333B6321C88B0FA00EEAA22 /* SearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsController.h; sourceTree = "<group>"; };
+		B333B6331C88B0FA00EEAA22 /* SearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsController.m; sourceTree = "<group>"; };
+		B333B6351C88BDF400EEAA22 /* DownloadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadController.h; sourceTree = "<group>"; };
+		B333B6361C88BDF400EEAA22 /* DownloadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadController.m; sourceTree = "<group>"; };
+		B333B6381C8A1B3800EEAA22 /* FriendsTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTagViewController.h; sourceTree = "<group>"; };
+		B333B6391C8A1B3800EEAA22 /* FriendsTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTagViewController.m; sourceTree = "<group>"; };
 		B3E90F821C82657000D5B8BE /* Phonon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phonon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E90F861C82657000D5B8BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3E90F881C82657000D5B8BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3E90F891C82657000D5B8BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B3E90F8B1C82657000D5B8BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B3E90F8C1C82657000D5B8BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B3E90F8F1C82657000D5B8BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3E90F911C82657000D5B8BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E90F941C82657000D5B8BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E90F961C82657000D5B8BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3E90F9B1C82657100D5B8BE /* PhononTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhononTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E90F9F1C82657100D5B8BE /* PhononTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhononTests.m; sourceTree = "<group>"; };
 		B3E90FA11C82657100D5B8BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E90FB01C8268AD00D5B8BE /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		B3E90FB11C8268AD00D5B8BE /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		B3E90FB31C83998700D5B8BE /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		B3E90FB41C83998700D5B8BE /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		B3E90FB61C839A7E00D5B8BE /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
+		B3E90FB71C839A7E00D5B8BE /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
+		B3E90FB91C83A9C100D5B8BE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B3E90FBA1C83A9C100D5B8BE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B3E90FBC1C83AC2600D5B8BE /* PresentDetailTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentDetailTransition.h; sourceTree = "<group>"; };
+		B3E90FBD1C83AC2600D5B8BE /* PresentDetailTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentDetailTransition.m; sourceTree = "<group>"; };
+		B3E90FBF1C83B38F00D5B8BE /* DismissDetailTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissDetailTransition.h; sourceTree = "<group>"; };
+		B3E90FC01C83B38F00D5B8BE /* DismissDetailTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissDetailTransition.m; sourceTree = "<group>"; };
+		B3E90FC21C83DB0E00D5B8BE /* MetadataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetadataView.h; sourceTree = "<group>"; };
+		B3E90FC31C83DB0E00D5B8BE /* MetadataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetadataView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1674C4771AA41D5529CE0F9 /* libPods-Phonon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +93,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DCAD53294F5C8E78E888F43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DA8AB212E8043842AEBD07C /* Pods-Phonon.debug.xcconfig */,
+				424DC5116E76E33BE3960B30 /* Pods-Phonon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62098C7B4FA1C32DAB158425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29D617D42B65B67636FD1B2D /* libPods-Phonon.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3E90F791C82657000D5B8BE = {
 			isa = PBXGroup;
 			children = (
 				B3E90F841C82657000D5B8BE /* Phonon */,
 				B3E90F9E1C82657100D5B8BE /* PhononTests */,
 				B3E90F831C82657000D5B8BE /* Products */,
+				4DCAD53294F5C8E78E888F43 /* Pods */,
+				62098C7B4FA1C32DAB158425 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +135,28 @@
 			children = (
 				B3E90F881C82657000D5B8BE /* AppDelegate.h */,
 				B3E90F891C82657000D5B8BE /* AppDelegate.m */,
-				B3E90F8B1C82657000D5B8BE /* ViewController.h */,
-				B3E90F8C1C82657000D5B8BE /* ViewController.m */,
-				B3E90F8E1C82657000D5B8BE /* Main.storyboard */,
+				B30441341C8DFDE4000B41DC /* LoginViewController.h */,
+				B30441351C8DFDE4000B41DC /* LoginViewController.m */,
+				B3E90FB01C8268AD00D5B8BE /* PhotoViewController.h */,
+				B3E90FB11C8268AD00D5B8BE /* PhotoViewController.m */,
+				B333B6381C8A1B3800EEAA22 /* FriendsTagViewController.h */,
+				B333B6391C8A1B3800EEAA22 /* FriendsTagViewController.m */,
+				B333B6321C88B0FA00EEAA22 /* SearchResultsController.h */,
+				B333B6331C88B0FA00EEAA22 /* SearchResultsController.m */,
+				B3E90FB91C83A9C100D5B8BE /* DetailViewController.h */,
+				B3E90FBA1C83A9C100D5B8BE /* DetailViewController.m */,
+				B3E90FBC1C83AC2600D5B8BE /* PresentDetailTransition.h */,
+				B3E90FBD1C83AC2600D5B8BE /* PresentDetailTransition.m */,
+				B3E90FBF1C83B38F00D5B8BE /* DismissDetailTransition.h */,
+				B3E90FC01C83B38F00D5B8BE /* DismissDetailTransition.m */,
+				B3E90FC21C83DB0E00D5B8BE /* MetadataView.h */,
+				B3E90FC31C83DB0E00D5B8BE /* MetadataView.m */,
+				B3E90FB61C839A7E00D5B8BE /* PhotoController.h */,
+				B3E90FB71C839A7E00D5B8BE /* PhotoController.m */,
+				B333B6351C88BDF400EEAA22 /* DownloadController.h */,
+				B333B6361C88BDF400EEAA22 /* DownloadController.m */,
+				B3E90FB31C83998700D5B8BE /* PhotoCell.h */,
+				B3E90FB41C83998700D5B8BE /* PhotoCell.m */,
 				B3E90F911C82657000D5B8BE /* Assets.xcassets */,
 				B3E90F931C82657000D5B8BE /* LaunchScreen.storyboard */,
 				B3E90F961C82657000D5B8BE /* Info.plist */,
@@ -118,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3E90FA41C82657100D5B8BE /* Build configuration list for PBXNativeTarget "Phonon" */;
 			buildPhases = (
+				754762E4D5662A59D89FE2F4 /* Check Pods Manifest.lock */,
 				B3E90F7E1C82657000D5B8BE /* Sources */,
 				B3E90F7F1C82657000D5B8BE /* Frameworks */,
 				B3E90F801C82657000D5B8BE /* Resources */,
+				380B7757901101A6B17831D9 /* Embed Pods Frameworks */,
+				689ED0595FE9099211BD86A5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +234,7 @@
 				TargetAttributes = {
 					B3E90F811C82657000D5B8BE = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NY664MKDXU;
 					};
 					B3E90F9A1C82657100D5B8BE = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -193,7 +268,6 @@
 			files = (
 				B3E90F951C82657000D5B8BE /* LaunchScreen.storyboard in Resources */,
 				B3E90F921C82657000D5B8BE /* Assets.xcassets in Resources */,
-				B3E90F901C82657000D5B8BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,14 +280,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		380B7757901101A6B17831D9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phonon/Pods-Phonon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		689ED0595FE9099211BD86A5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phonon/Pods-Phonon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		754762E4D5662A59D89FE2F4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B3E90F7E1C82657000D5B8BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E90F8D1C82657000D5B8BE /* ViewController.m in Sources */,
+				B333B6341C88B0FA00EEAA22 /* SearchResultsController.m in Sources */,
+				B3E90FC41C83DB0E00D5B8BE /* MetadataView.m in Sources */,
+				B30441361C8DFDE4000B41DC /* LoginViewController.m in Sources */,
+				B3E90FB51C83998700D5B8BE /* PhotoCell.m in Sources */,
+				B3E90FB21C8268AD00D5B8BE /* PhotoViewController.m in Sources */,
 				B3E90F8A1C82657000D5B8BE /* AppDelegate.m in Sources */,
 				B3E90F871C82657000D5B8BE /* main.m in Sources */,
+				B3E90FBE1C83AC2600D5B8BE /* PresentDetailTransition.m in Sources */,
+				B3E90FB81C839A7E00D5B8BE /* PhotoController.m in Sources */,
+				B3E90FC11C83B38F00D5B8BE /* DismissDetailTransition.m in Sources */,
+				B333B6371C88BDF400EEAA22 /* DownloadController.m in Sources */,
+				B3E90FBB1C83A9C100D5B8BE /* DetailViewController.m in Sources */,
+				B333B63A1C8A1B3800EEAA22 /* FriendsTagViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,14 +368,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3E90F8E1C82657000D5B8BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3E90F8F1C82657000D5B8BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B3E90F931C82657000D5B8BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -339,8 +463,10 @@
 		};
 		B3E90FA51C82657100D5B8BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DA8AB212E8043842AEBD07C /* Pods-Phonon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Phonon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlpan.remote.Phonon;
@@ -350,8 +476,10 @@
 		};
 		B3E90FA61C82657100D5B8BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 424DC5116E76E33BE3960B30 /* Pods-Phonon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Phonon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlpan.remote.Phonon;
@@ -402,6 +530,7 @@
 				B3E90FA61C82657100D5B8BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3E90FA71C82657100D5B8BE /* Build configuration list for PBXNativeTarget "PhononTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +539,7 @@
 				B3E90FA91C82657100D5B8BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
