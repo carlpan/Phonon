@@ -31,7 +31,7 @@
     
     [UIView animateWithDuration:0.3 animations:^{
         detail.view.alpha = 1.0;
-    }completion:^(BOOL finished) {
+    } completion:^(BOOL finished) {
         [transitionContext completeTransition:YES];
     }];
 }

@@ -7,7 +7,6 @@
 //
 
 #import "PhotoController.h"
-#import <UIKit/UIKit.h>
 #import "FriendsTagViewController.h"
 #import <SAMCache/SAMCache.h>
 

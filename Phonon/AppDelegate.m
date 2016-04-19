@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "PhotoViewController.h"
+#import "LoginViewController.h"
 #import <SimpleAuth/SimpleAuth.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -22,6 +25,9 @@
     
     [NSThread sleepForTimeInterval:1.5];
     
+    [Fabric with:@[[Crashlytics class]]];
+    
+    
     // Simple Auth for Instagram
     SimpleAuth.configuration[@"instagram"] = @{
         @"client_id" : @"1ceeccc66bbe479abd39798f27ac3ab8",
@@ -30,18 +36,27 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Make navigation controller to be initial
-    PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoViewController];
-    self.window.rootViewController = navController;
+    // Check for user default access token
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [userDefaults objectForKey:@"accessToken"];
     
-    // Set Navigation bar style
-    navController.navigationBar.barTintColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0];
-    navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-
+    if (accessToken == nil) {
+        LoginViewController *loginViewController = [[LoginViewController alloc] init];
+        self.window.rootViewController = loginViewController;
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+    } else {
+        // Make navigation controller to be initial
+        PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoViewController];
+        self.window.rootViewController = navController;
+                
+        // Set Navigation bar style
+        navController.navigationBar.barTintColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0];
+        navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+    }
     
     return YES;
 }

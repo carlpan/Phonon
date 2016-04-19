@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
+    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
     self.view.clipsToBounds = YES;
     
     

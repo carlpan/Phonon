@@ -35,6 +35,7 @@
     // At this point, we already have access token stored
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.accessToken = [userDefaults objectForKey:@"accessToken"];
+    
 }
 
 
@@ -63,11 +64,8 @@
     // removes the row highlight after selecting
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    // Get the cell
-    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     // Get the selected tag
     NSString *selectedTag = [self.filteredMediaTagNames objectAtIndex:indexPath.row];
-
 
     // Show the friends controller
     PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
@@ -88,17 +86,6 @@
                     }
                     completion:nil];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 #pragma mark - UISearchResultsUpdatingDelegate

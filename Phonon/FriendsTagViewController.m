@@ -11,15 +11,19 @@
 #import "PhotoViewController.h"
 #import "DownloadController.h"
 #import "DetailViewController.h"
+#import "PhotoController.h"
 #import "PhotoCell.h"
 
 @interface FriendsTagViewController ()
 
 @property (strong, nonatomic) NSString *accessToken;
 
-@property (strong, nonatomic) NSMutableArray *friendsPhotoData;
+@property (strong, nonatomic) NSArray *friendsPhotoData;
+
 
 @property (strong, nonatomic) SearchResultsController *resultsController;
+
+@property (strong, nonatomic) UIRefreshControl *refreshControll;
 
 @end
 
@@ -55,7 +59,14 @@ static NSString * const reuseIdentifier = @"Cell";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.accessToken = [userDefaults objectForKey:@"accessToken"];
     
-    self.friendsPhotoData = [NSMutableArray array];
+    self.friendsPhotoData = [NSArray array];
+    
+    // Initialize refresh
+    self.refreshControll = [[UIRefreshControl alloc] init];
+    [self.refreshControll addTarget:self action:@selector(showFriendsPhotoWithTag:) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.refreshControll];
+    self.collectionView.alwaysBounceVertical = YES;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -79,7 +90,11 @@ static NSString * const reuseIdentifier = @"Cell";
     PhotoCell *cell = (PhotoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    cell.photo = self.friendsPhotoData[indexPath.row];
+    //cell.photo = self.friendsPhotoData[indexPath.row];
+    NSDictionary *photo = self.friendsPhotoData[indexPath.row];
+    [PhotoController imageForPhoto:photo size:@"thumbnail" completion:^(UIImage *image) {
+        cell.imageView.image = image;
+    }];
     
     return cell;
 }
@@ -87,6 +102,8 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - Private methods
 
 - (void)showFriendsPhotoWithTag:(NSString *)tagName {
+    
+    NSMutableArray *photoData = [NSMutableArray array];
     
     [self.userIds enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *friendId = (NSString *)obj;
@@ -97,11 +114,17 @@ static NSString * const reuseIdentifier = @"Cell";
             for (NSDictionary *photoInfo in resultArray) {
                 NSArray *tags = photoInfo[@"tags"];
                 if ([tags containsObject:self.tagName]) {
-                    [self.friendsPhotoData addObject:photoInfo];
+                    [photoData addObject:photoInfo];
                 }
             }
             
+            self.friendsPhotoData = [photoData copy];
             [self.collectionView reloadData];
+            
+            if ([self.refreshControll isRefreshing]) {
+                [self.refreshControll endRefreshing];
+            }
+
         }];
     }];
 }

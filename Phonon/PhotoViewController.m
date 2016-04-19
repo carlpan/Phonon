@@ -14,6 +14,7 @@
 #import "DismissDetailTransition.h"
 #import "SearchResultsController.h"
 #import "LoginViewController.h"
+#import "AppDelegate.h"
 #import <SimpleAuth/SimpleAuth.h>
 
 @interface PhotoViewController () <UIViewControllerTransitioningDelegate, SearchResultsControllerDelegate>
@@ -58,28 +59,12 @@ static NSString * const reuseIdentifier = @"Photo";
     [self.collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
-    
-    // Save token (save into disk)
-    // Note: NSUserDefaults is good to store access tokens (passwords)
-    // better to store in to ssh keychain
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.accessToken = [userDefaults objectForKey:@"accessToken"];
-    
-    if (self.accessToken == nil) {
-        [SimpleAuth authorize:@"instagram" options:@{@"scope": @[@"public_content", @"follower_list"]} completion:^(NSDictionary *responseObject, NSError *error) {
-            
-            // Get access token
-            NSString *accessToken = responseObject[@"credentials"][@"token"];
-            
-            [userDefaults setObject:accessToken forKey:@"accessToken"];
-            [userDefaults synchronize];
-        }];
-    }
-    
+
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     // Navigation bar setup
-    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutPressed:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutPressed:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
@@ -88,6 +73,11 @@ static NSString * const reuseIdentifier = @"Photo";
 
     self.resultsController.delegate = self;
     
+    // Get user default
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.accessToken = [userDefaults objectForKey:@"accessToken"];
+
+    // Refresh view controller
     [self refresh];
     
     // Initalize array of tag names for search results controller to use
@@ -102,6 +92,7 @@ static NSString * const reuseIdentifier = @"Photo";
     [self.collectionView addSubview:self.refreshControll];
     self.collectionView.alwaysBounceVertical = YES;
 }
+
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -150,18 +141,6 @@ static NSString * const reuseIdentifier = @"Photo";
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     return [[DismissDetailTransition alloc] init];
 }
-
-/*
-- (void)willPresentSearchController:(UISearchController *)searchController {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.searchController.searchResultsController.view.hidden = NO;
-    });
-}
-
-- (void)didPresentSearchController:(UISearchController *)searchController {
-    self.searchController.searchResultsController.view.hidden = NO;
-}
-*/
 
 
 #pragma mark - SearchResultsDelegate method
@@ -234,19 +213,22 @@ static NSString * const reuseIdentifier = @"Photo";
 }
 
 
+- (void)dealloc {
+    [self.searchController.view removeFromSuperview];
+}
+
 #pragma mark - IBActions
 
-/*
 - (IBAction)logoutPressed:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     [userDefaults removeObjectForKey:@"accessToken"];
     [userDefaults synchronize];
     
+    
     LoginViewController *loginVC = [[LoginViewController alloc] init];
-    [self.navigationController pushViewController:loginVC animated:YES];
-    //[self presentViewController:loginVC animated:YES completion:nil];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.window.rootViewController = loginVC;
 }
-*/
 
 @end

@@ -10,6 +10,9 @@ pod 'SimpleAuth/Instagram', '0.3.6'
 pod 'SAMCache'
 pod 'SAMCategories'
 
+pod 'Fabric'
+pod 'Crashlytics'
+
 end
 
 target 'PhononTests' do

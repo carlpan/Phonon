@@ -7,11 +7,11 @@
 //
 
 #import "LoginViewController.h"
+#import "AppDelegate.h"
+#import "PhotoViewController.h"
 #import <SimpleAuth/SimpleAuth.h>
 
 @interface LoginViewController ()
-
-@property (strong, nonatomic) NSUserDefaults *userDefaults;
 
 @end
 
@@ -21,13 +21,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"login view");
+    // Set view background color
+    self.view.backgroundColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0];
+    
     // Addig login button
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.backgroundColor = [UIColor yellowColor];
+    loginButton.layer.cornerRadius = 5;
+    loginButton.backgroundColor = [UIColor whiteColor];
     loginButton.frame = CGRectMake(0, 0, 320, 40);
     loginButton.center = self.view.center;
     [loginButton setTitle:@"Login with Instagram" forState:UIControlStateNormal];
+    [loginButton setTitleColor:[UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0] forState:UIControlStateNormal];
     
     // Adding action on button
     [loginButton addTarget:self action:@selector(loginPressed) forControlEvents:UIControlEventTouchUpInside];
@@ -35,29 +39,38 @@
     // Add button to the view
     [self.view addSubview:loginButton];
     
-    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    // Status bar text color
+    [self setNeedsStatusBarAppearanceUpdate];
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.navigationController.navigationBar setHidden:YES];
-    //if ([self.userDefaults objectForKey:@"accessToken"] != nil) {
-    //[self.navigationController popToRootViewControllerAnimated:YES];
-    //}
-    //[self.navigationController popToRootViewControllerAnimated:YES];
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)loginPressed {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
     [SimpleAuth authorize:@"instagram" options:@{@"scope": @[@"public_content", @"follower_list"]} completion:^(NSDictionary *responseObject, NSError *error) {
         
         // Get access token
         NSString *accessToken = responseObject[@"credentials"][@"token"];
         
-        [self.userDefaults setObject:accessToken forKey:@"accessToken"];
-        [self.userDefaults synchronize];
+        [userDefaults setObject:accessToken forKey:@"accessToken"];
+        [userDefaults synchronize];
+        
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoViewController];
+        appDelegate.window.rootViewController = navController;
+        
+        // Set Navigation bar style
+        navController.navigationBar.barTintColor = [UIColor colorWithRed:0.61 green:0.17 blue:0.88 alpha:1.0];
+        navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        
+        appDelegate.window.backgroundColor = [UIColor whiteColor];
+        [appDelegate.window makeKeyAndVisible];
     }];
 }
-
 
 @end
